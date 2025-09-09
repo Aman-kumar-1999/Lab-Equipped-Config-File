@@ -25,7 +25,7 @@ management:
 
 info:
   app:
-    name: ${spring.application.name}
+    name: "API Gateway"
     description: "API Gateway for Lab Equipped"
     version: "1.0.0"
 
