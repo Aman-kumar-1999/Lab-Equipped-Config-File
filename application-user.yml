@@ -2,7 +2,7 @@ server:
   port: 5002
 spring:
   application:
-    name: USER-SERVICE
+    name: user-service
   datasource:
     url: jdbc:oracle:thin:@//localhost:1521/FREEPDB1 #use service name here
     username: labequiped
