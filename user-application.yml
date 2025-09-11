@@ -1,5 +1,6 @@
 server:
   port: 5002
+spring:
   datasource:
     # this is an Oracle container image
     url: jdbc:oracle:thin:@//localhost:1521/FREEPDB1 #use service name here
