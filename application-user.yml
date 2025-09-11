@@ -4,6 +4,7 @@ spring:
   application:
     name: user-service
   datasource:
+     # this is an Oracle container image
     url: jdbc:oracle:thin:@//localhost:1521/FREEPDB1 #use service name here
     username: labequiped
     password: root
@@ -15,19 +16,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
-# spring:
-#   datasource:
-#     # this is an Oracle container image
-#     url: jdbc:oracle:thin:@//localhost:1521/FREEPDB1 #use service name here
-#     username: labequiped
-#     password: root
-#   jpa:
-#     hibernate:
-#       ddl-auto: update
-#     show-sql: true
-#     properties:
-#       hibernate:
-#         formate_sql: true
 eureka:
   instance:
     prefer-ip-address: true
