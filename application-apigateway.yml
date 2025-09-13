@@ -7,13 +7,7 @@ spring:
     gateway:
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods: "*"
-            allowedHeaders: "*"
-            allowCredentials: true
+      
       server:
         webflux:   
           # This is for dynamic routing using Eureka server
@@ -23,51 +17,18 @@ spring:
           #         lower-case-service-id: true
 
           # This is for static routing
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                  allowedOrigins: "*"
+                  allowedMethods: "*"
+                  allowedHeaders: "*"
           routes:
             - id: user-service
               uri: lb://user-service
               predicates:
                 - Path=/api/auth/**,/api/users/**,/api/roles/**,/api/sidebar
-            - id: auth-service
-              uri: lb://auth-service
-              predicates:
-                - Path=/auth/**
-            - id: lab-service
-              uri: lb://lab-service
-              predicates:
-                - Path=/lab/**
-            - id: appointment-service
-              uri: lb://appointment-service
-              predicates:
-                - Path=/appointment/**
-            - id: prescription-service
-              uri: lb://prescription-service
-              predicates:
-                - Path=/prescription/**
-            - id: pharmacy-service
-              uri: lb://pharmacy-service
-              predicates:
-                - Path=/pharmacy/**
-            - id: payment-service
-              uri: lb://payment-service
-              predicates:
-                - Path=/payment/**
-            - id: report-service
-              uri: lb://report-service
-              predicates:
-                - Path=/report/**
-            - id: notification-service
-              uri: lb://notification-service
-              predicates:
-                - Path=/notification/**
-
-      # This is for rate limiting 
-      default-filters:
-        - name: RequestRateLimiter
-          args:
-            key-resolver: "#{@ipKeyResolver}"
-            redis-rate-limiter.replenish-rate: 10 # number of requests per second
-            redis-rate-limiter.burst-capacity: 20 # maximum number of requests in a burst
+            
 management:
   endpoints:
     web:
