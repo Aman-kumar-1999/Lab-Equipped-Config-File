@@ -22,10 +22,11 @@ project:
 spring:
   application:
     name: PRODUCT-SERVICE
-  redis:
-    host: localhost
-    port: 6379
+  
   data:
+    redis:
+      host: localhost
+      port: 6379
     mongodb:
       uri: mongodb://admin:gsk3E1ZwjWwgqAoC@cluster0-shard-00-00.9xkoq.mongodb.net:27017,cluster0-shard-00-01.9xkoq.mongodb.net:27017,cluster0-shard-00-02.9xkoq.mongodb.net:27017/?replicaSet=atlas-ndnizx-shard-0&ssl=true&authSource=admin
       database: eqipped_new
