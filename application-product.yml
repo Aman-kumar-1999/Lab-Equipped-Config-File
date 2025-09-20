@@ -22,14 +22,29 @@ project:
 spring:
   application:
     name: PRODUCT-SERVICE
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: product-service-group
+      auto-offset-reset: earliest
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
   
   data:
     redis:
       host: localhost
       port: 6379
     mongodb:
-      uri: mongodb://admin:gsk3E1ZwjWwgqAoC@cluster0-shard-00-00.9xkoq.mongodb.net:27017,cluster0-shard-00-01.9xkoq.mongodb.net:27017,cluster0-shard-00-02.9xkoq.mongodb.net:27017/?replicaSet=atlas-ndnizx-shard-0&ssl=true&authSource=admin
-      database: eqipped_new
+      uri: mongodb://localhost:27017/productdb
+    # mongodb:
+    #   uri: mongodb://admin:gsk3E1ZwjWwgqAoC@cluster0-shard-00-00.9xkoq.mongodb.net:27017,cluster0-shard-00-01.9xkoq.mongodb.net:27017,cluster0-shard-00-02.9xkoq.mongodb.net:27017/?replicaSet=atlas-ndnizx-shard-0&ssl=true&authSource=admin
+    #   database: eqipped_new
   servlet:
     multipart:
       enabled: true
