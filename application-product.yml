@@ -13,10 +13,10 @@ eureka:
       #defaultZone: http://13.233.173.112:5000/eureka
       defaultZone: http://localhost:8761/eureka
 # Eureka End
-project:
-  image: https://eqipped.com/image/
-  # upload: D:\\eqipped\\eqipped_image
-  upload: /var/www/html/image
+# project:
+#   image: https://eqipped.com/image/
+#   # upload: D:\\eqipped\\eqipped_image
+#   upload: /var/www/html/image
 
 # Spring Start
 spring:
@@ -46,11 +46,11 @@ spring:
     # mongodb:
     #   uri: mongodb://admin:gsk3E1ZwjWwgqAoC@cluster0-shard-00-00.9xkoq.mongodb.net:27017,cluster0-shard-00-01.9xkoq.mongodb.net:27017,cluster0-shard-00-02.9xkoq.mongodb.net:27017/?replicaSet=atlas-ndnizx-shard-0&ssl=true&authSource=admin
     #   database: eqipped_new
-  servlet:
-    multipart:
-      enabled: true
-      max-file-size: 10MB
-      max-request-size: 10MB
+  # servlet:
+  #   multipart:
+  #     enabled: true
+  #     max-file-size: 10MB
+  #     max-request-size: 10MB
 
 #   config:
 #     import: optional:configserver:http://localhost:5001
