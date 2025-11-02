@@ -24,7 +24,8 @@ spring:
       host: localhost
       port: 6379
     mongodb:
-      uri: mongodb://admin:admin123@localhost:27017/labequiped?authSource=admin
+      uri: mongodb+srv://test-eqipped:9Fj5tt4a6M955mtV@cluster0.7o7x7gv.mongodb.net/
+      # mongodb://admin:admin123@localhost:27017/labequiped?authSource=admin
       database: labequiped
 
 
